@@ -60,11 +60,7 @@ description: A personal blog about poetry, food, travel, essays, and books.
       </a>
       <a class="cat-tile" href="/film/">
         <div class="wash" style="background:var(--fresh)"></div>
-        <svg class="illus" width="46" height="46" viewBox="0 0 24 24" aria-hidden="true">
-          <rect x="2" y="3" width="20" height="14" rx="2" fill="var(--deep)"></rect>
-          <rect x="8" y="19" width="8" height="1.6" rx="0.8" fill="var(--deep)"></rect>
-          <path d="M10 7.5v5l4.3-2.5z" fill="var(--paper)"></path>
-        </svg>
+        <img class="illus" src="/assets/film-tv-icon.png" alt="" width="46" height="49.3" aria-hidden="true">
         <h3>{{ categories.film.name }}</h3>
         <p>{{ categories.film.tagline }}</p>
       </a>
@@ -110,7 +106,7 @@ description: A personal blog about poetry, food, travel, essays, and books.
       "Travel": { color: "var(--fresh2)", icon: "/assets/suitcase.png", w: 34, h: 28.8 },
       "Essays": { color: "var(--olive)", icon: "/assets/notebook.png", w: 34, h: 44.8 },
       "Books": { color: "var(--deep)", icon: "/assets/books.png", w: 34, h: 24.1 },
-      "Film": { color: "var(--fresh)", icon: "", w: 34, h: 34 }
+      "Film": { color: "var(--fresh)", icon: "/assets/film-tv-icon.png", w: 34, h: 36.4 }
     } %}
 
     {% for cat in ["Poetry", "Food", "Travel", "Essays", "Books", "Film"] %}
@@ -119,15 +115,7 @@ description: A personal blog about poetry, food, travel, essays, and books.
     <div class="archive-group" id="{{ cat | lower }}">
       <div class="archive-head">
         <div class="archive-badge" style="background:{{ meta.color }}">
-          {% if cat == "Film" %}
-          <svg width="34" height="34" viewBox="0 0 24 24" aria-hidden="true">
-            <rect x="2" y="3" width="20" height="14" rx="2" fill="#fff"></rect>
-            <rect x="8" y="19" width="8" height="1.6" rx="0.8" fill="#fff"></rect>
-            <path d="M10 7.5v5l4.3-2.5z" fill="var(--fresh)"></path>
-          </svg>
-          {% else %}
           <img class="illus" src="{{ meta.icon }}" alt="" width="{{ meta.w }}" height="{{ meta.h }}" aria-hidden="true">
-          {% endif %}
         </div>
         <h3>{{ categories[cat | lower].name }}</h3>
       </div>
