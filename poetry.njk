@@ -1,15 +1,16 @@
 ---
 layout: base.njk
 title: Poetry
-description: Short verse, mostly about weather and doubt.
 permalink: /poetry/
 ---
 <section class="wrap category-hero">
-  <img src="/assets/poetry-hero.png" alt="" onerror="this.style.display='none'">
+  {% if categories.poetry.hero_image %}
+  <img src="{{ categories.poetry.hero_image }}" alt="">
+  {% endif %}
   <div>
     <span class="eyebrow">Browse by kind</span>
-    <h1>Poetry</h1>
-    <p>Short verse, mostly about weather and doubt.</p>
+    <h1>{{ categories.poetry.name }}</h1>
+    <p>{{ categories.poetry.tagline }}</p>
   </div>
 </section>
 
