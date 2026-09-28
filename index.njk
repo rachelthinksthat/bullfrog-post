@@ -15,7 +15,7 @@ description: A personal blog about poetry, food, travel, essays, and books.
         <a class="btn btn-outline" href="#about">About Rachel</a>
       </div>
     </div>
-    <img class="illus hero-header-art" src="/assets/header-frog.png" alt="A bullfrog postal courier hopping past a pond-side mailbox" width="1200" height="792">
+    <img class="illus hero-header-art" src="{{ home.hero_image or '/assets/header-frog.png' }}" alt="A bullfrog postal courier hopping past a pond-side mailbox" width="1200" height="792">
   </div>
 </section>
 
@@ -129,7 +129,7 @@ description: A personal blog about poetry, food, travel, essays, and books.
     <div class="about" id="about">
       <div class="about-inner">
         <div class="about-scene">
-          <img class="illus" src="/assets/about-frog-umbrella.png" alt="A bullfrog peeking out of the water, sheltering under a lily pad" width="1026" height="753">
+          <img class="illus" src="{{ home.about_image or '/assets/about-frog-umbrella.png' }}" alt="A bullfrog peeking out of the water, sheltering under a lily pad" width="1026" height="753">
         </div>
         <div class="about-copy">
           <span class="eyebrow">About Rachel</span>
