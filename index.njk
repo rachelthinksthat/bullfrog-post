@@ -7,9 +7,9 @@ description: A personal blog about poetry, food, travel, essays, and books.
 <section id="home" class="hero">
   <div class="wrap hero-inner">
     <div class="hero-copy">
-      <span class="eyebrow">A personal blog, hopped fresh</span>
-      <h1>Stories, poems, and unfinished thoughts, told by one particularly nosy frog.</h1>
-      <p class="lede">I'm Rachel — this is where I write about the food I've eaten, the places I've been, the books I can't stop thinking about, and everything in between. Grab a seat on a lily pad.</p>
+      <span class="eyebrow">{{ home.hero_eyebrow }}</span>
+      <h1>{{ home.hero_headline }}</h1>
+      <p class="lede">{{ home.hero_lede }}</p>
       <div class="hero-ctas">
         <a class="btn btn-primary" href="#recent">Start reading</a>
         <a class="btn btn-outline" href="#about">About Rachel</a>
@@ -28,31 +28,31 @@ description: A personal blog about poetry, food, travel, essays, and books.
         <div class="wash" style="background:var(--pink)"></div>
         <img class="illus" src="/assets/quill.png" alt="" width="46" height="50.1" aria-hidden="true">
         <h3>Poetry</h3>
-        <p>Short verse, mostly about weather and doubt.</p>
+        <p>{{ categories.poetry.tagline }}</p>
       </a>
       <a class="cat-tile" href="/food/">
         <div class="wash" style="background:var(--orange)"></div>
         <img class="illus" src="/assets/teacup.png" alt="" width="46" height="37" aria-hidden="true">
         <h3>Food</h3>
-        <p>Reviews, recipes, and things worth queuing for.</p>
+        <p>{{ categories.food.tagline }}</p>
       </a>
       <a class="cat-tile" href="/travel/">
         <div class="wash" style="background:var(--fresh2)"></div>
         <img class="illus" src="/assets/suitcase.png" alt="" width="46" height="39" aria-hidden="true">
         <h3>Travel</h3>
-        <p>Notes from wherever the map pointed next.</p>
+        <p>{{ categories.travel.tagline }}</p>
       </a>
       <a class="cat-tile" href="/essays/">
         <div class="wash" style="background:var(--olive)"></div>
         <img class="illus" src="/assets/notebook.png" alt="" width="46" height="60.6" aria-hidden="true">
         <h3>Essays</h3>
-        <p>Longer thoughts I couldn't fit into a poem.</p>
+        <p>{{ categories.essays.tagline }}</p>
       </a>
       <a class="cat-tile" href="/books/">
         <div class="wash" style="background:var(--deep)"></div>
         <img class="illus" src="/assets/books.png" alt="" width="46" height="32.6" aria-hidden="true">
         <h3>Books</h3>
-        <p>What I'm reading, and what I think of it.</p>
+        <p>{{ categories.books.tagline }}</p>
       </a>
     </div>
   </div>
@@ -133,15 +133,15 @@ description: A personal blog about poetry, food, travel, essays, and books.
         </div>
         <div class="about-copy">
           <span class="eyebrow">About Rachel</span>
-          <h2 style="font-size:30px">Writer, researcher, and enthusiastic noticer of small things.</h2>
-          <p>[Draft — personalize this] I'm a dissertation student based in London, and The Bullfrog Post is where I write outside of it: poems, food reviews, travel notes, and essays about whatever's been sitting in my head. This site also doubles as my writing portfolio, so if you're here from a job listing, welcome — start with the essays.</p>
+          <h2 style="font-size:30px">{{ home.about_heading }}</h2>
+          <p>{{ home.about_bio }}</p>
           <div class="about-facts">
-            <div><span class="label">Based in</span><span class="value">London</span></div>
-            <div><span class="label">Writing since</span><span class="value">2026</span></div>
-            <div><span class="label">Currently reading</span><span class="value">[add a book]</span></div>
+            <div><span class="label">Based in</span><span class="value">{{ home.about_based_in }}</span></div>
+            <div><span class="label">Writing since</span><span class="value">{{ home.about_writing_since }}</span></div>
+            <div><span class="label">Currently reading</span><span class="value">{{ home.about_currently_reading }}</span></div>
           </div>
           <div style="margin-top:6px">
-            <span class="text-link">hello@thebullfrogpost.com</span>
+            <span class="text-link">{{ home.about_email }}</span>
           </div>
         </div>
       </div>
