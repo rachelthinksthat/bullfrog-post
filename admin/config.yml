@@ -51,7 +51,7 @@ collections:
       - label: "Category"
         name: "category"
         widget: "select"
-        options: ["Poetry", "Food", "Travel", "Essays", "Books"]
+        options: ["Poetry", "Food", "Travel", "Essays", "Books", "Film"]
       - { label: "Cover image", name: "image", widget: "image", required: false }
       - { label: "Excerpt", name: "excerpt", widget: "text", hint: "One or two sentences — shown on the homepage and category page." }
       - { label: "Body", name: "body", widget: "markdown" }
@@ -108,6 +108,13 @@ collections:
               - { label: "Hero image", name: "hero_image", widget: "image", required: false }
           - label: "Books"
             name: "books"
+            widget: "object"
+            fields:
+              - { label: "Display name", name: "name", widget: "string" }
+              - { label: "Tagline", name: "tagline", widget: "string" }
+              - { label: "Hero image", name: "hero_image", widget: "image", required: false }
+          - label: "Film"
+            name: "film"
             widget: "object"
             fields:
               - { label: "Display name", name: "name", widget: "string" }
