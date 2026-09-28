@@ -1,0 +1,23 @@
+---
+layout: base.njk
+---
+<section class="wrap post-article" style="padding-block:56px 76px">
+  <a class="back-link" href="/{{ category | lower }}/">← Back to {{ category }}</a>
+
+  {% if image %}
+  <img class="post-hero" src="{{ image }}" alt="{{ title }}">
+  {% endif %}
+
+  <span class="tag"><span class="dot" style="background:{% if category == 'Poetry' %}var(--pink){% elif category == 'Food' %}var(--orange){% elif category == 'Travel' %}var(--fresh2){% elif category == 'Essays' %}var(--olive){% else %}var(--deep){% endif %}"></span>{{ category }}</span>
+  <h1>{{ title }}</h1>
+  <time>{{ date | niceDate }}</time>
+
+  <div class="post-body" style="margin-top:28px">
+    {{ content | safe }}
+  </div>
+
+  <div class="post-footer-nav">
+    <a class="text-link" href="/{{ category | lower }}/">← More {{ category }}</a>
+    <a class="text-link" href="/#follow">Get the next post →</a>
+  </div>
+</section>

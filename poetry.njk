@@ -1,0 +1,53 @@
+---
+layout: base.njk
+title: Poetry
+description: Short verse, mostly about weather and doubt.
+permalink: /poetry/
+---
+<section class="wrap category-hero">
+  <img src="/assets/poetry-hero.png" alt="" onerror="this.style.display='none'">
+  <div>
+    <span class="eyebrow">Browse by kind</span>
+    <h1>Poetry</h1>
+    <p>Short verse, mostly about weather and doubt.</p>
+  </div>
+</section>
+
+<section class="wrap" style="padding-top:0">
+  {%- set catPosts = collections.poetry -%}
+  {%- if catPosts.length -%}
+  {%- set featured = catPosts[0] -%}
+  <a class="featured-card" href="{{ featured.url }}">
+    {%- if featured.data.image %}
+    <img src="{{ featured.data.image }}" alt="">
+    {%- endif %}
+    <div>
+      <span class="tag"><span class="dot" style="background:var(--pink)"></span>Poetry · Newest</span>
+      <h2>{{ featured.data.title }}</h2>
+      <p>{{ featured.data.excerpt }}</p>
+    </div>
+  </a>
+
+  {%- if catPosts.length > 1 %}
+  <div class="post-grid">
+    {%- for post in catPosts %}
+    {%- if loop.index > 1 %}
+    <a class="post-card" href="{{ post.url }}">
+      {%- if post.data.image %}
+      <img src="{{ post.data.image }}" alt="">
+      {%- endif %}
+      <div class="post-card-body">
+        <span class="tag"><span class="dot" style="background:var(--pink)"></span>{{ post.data.date | niceDate }}</span>
+        <h3>{{ post.data.title }}</h3>
+        <p>{{ post.data.excerpt }}</p>
+      </div>
+    </a>
+    {%- endif %}
+    {%- endfor %}
+  </div>
+  {%- endif %}
+
+  {%- else %}
+  <p style="color:var(--ink-soft);font-size:17px">Nothing here yet — the first poetry post is on its way.</p>
+  {%- endif %}
+</section>
