@@ -1,15 +1,16 @@
 ---
 layout: base.njk
 title: Essays
-description: Longer thoughts I couldn't fit into a poem.
 permalink: /essays/
 ---
 <section class="wrap category-hero">
-  <img src="/assets/essays-hero.png" alt="" onerror="this.style.display='none'">
+  {% if categories.essays.hero_image %}
+  <img src="{{ categories.essays.hero_image }}" alt="">
+  {% endif %}
   <div>
     <span class="eyebrow">Browse by kind</span>
-    <h1>Essays</h1>
-    <p>Longer thoughts I couldn't fit into a poem.</p>
+    <h1>{{ categories.essays.name }}</h1>
+    <p>{{ categories.essays.tagline }}</p>
   </div>
 </section>
 
