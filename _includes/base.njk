@@ -108,8 +108,8 @@
   .drift{animation:drift 6s ease-in-out infinite alternate}
   @media (prefers-reduced-motion: reduce){.hop,.sway,.bob,.drift{animation:none}}
 
-  .cat-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px;position:relative;z-index:2}
-  @media (max-width:960px){ .cat-grid{grid-template-columns:repeat(2,minmax(0,1fr))} }
+  .cat-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;position:relative;z-index:2}
+  @media (max-width:900px){ .cat-grid{grid-template-columns:repeat(2,minmax(0,1fr))} }
   @media (max-width:480px){ .cat-grid{grid-template-columns:1fr} }
   .cat-tile{
     position:relative;overflow:hidden;
@@ -241,11 +241,12 @@
       <span>The Bullfrog Post</span>
     </a>
     <nav class="primary" aria-label="Primary">
-      <a href="/poetry/">Poetry</a>
-      <a href="/food/">Food</a>
-      <a href="/travel/">Travel</a>
-      <a href="/essays/">Essays</a>
-      <a href="/books/">Books</a>
+      <a href="/poetry/">{{ categories.poetry.name }}</a>
+      <a href="/food/">{{ categories.food.name }}</a>
+      <a href="/travel/">{{ categories.travel.name }}</a>
+      <a href="/essays/">{{ categories.essays.name }}</a>
+      <a href="/books/">{{ categories.books.name }}</a>
+      <a href="/film/">{{ categories.film.name }}</a>
       <a href="/#about">About</a>
     </nav>
     <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="mobile-panel" aria-label="Open menu">
@@ -253,11 +254,12 @@
     </button>
   </div>
   <nav class="mobile-panel" id="mobile-panel" aria-label="Mobile">
-    <a href="/poetry/">Poetry</a>
-    <a href="/food/">Food</a>
-    <a href="/travel/">Travel</a>
-    <a href="/essays/">Essays</a>
-    <a href="/books/">Books</a>
+    <a href="/poetry/">{{ categories.poetry.name }}</a>
+    <a href="/food/">{{ categories.food.name }}</a>
+    <a href="/travel/">{{ categories.travel.name }}</a>
+    <a href="/essays/">{{ categories.essays.name }}</a>
+    <a href="/books/">{{ categories.books.name }}</a>
+    <a href="/film/">{{ categories.film.name }}</a>
     <a href="/#about">About</a>
   </nav>
 </header>
@@ -276,11 +278,12 @@
       <div class="footer-cols">
         <div class="footer-col">
           <span class="label">Read</span>
-          <a href="/poetry/">Poetry</a>
-          <a href="/food/">Food</a>
-          <a href="/travel/">Travel</a>
-          <a href="/essays/">Essays</a>
-          <a href="/books/">Books</a>
+          <a href="/poetry/">{{ categories.poetry.name }}</a>
+          <a href="/food/">{{ categories.food.name }}</a>
+          <a href="/travel/">{{ categories.travel.name }}</a>
+          <a href="/essays/">{{ categories.essays.name }}</a>
+          <a href="/books/">{{ categories.books.name }}</a>
+          <a href="/film/">{{ categories.film.name }}</a>
         </div>
         <div class="footer-col">
           <span class="label">Connect</span>
