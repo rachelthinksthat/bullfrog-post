@@ -1,15 +1,16 @@
 ---
 layout: base.njk
 title: Food
-description: Reviews, recipes, and things worth queuing for.
 permalink: /food/
 ---
 <section class="wrap category-hero">
-  <img src="/assets/food-hero.png" alt="" onerror="this.style.display='none'">
+  {% if categories.food.hero_image %}
+  <img src="{{ categories.food.hero_image }}" alt="">
+  {% endif %}
   <div>
     <span class="eyebrow">Browse by kind</span>
-    <h1>Food</h1>
-    <p>Reviews, recipes, and things worth queuing for.</p>
+    <h1>{{ categories.food.name }}</h1>
+    <p>{{ categories.food.tagline }}</p>
   </div>
 </section>
 
