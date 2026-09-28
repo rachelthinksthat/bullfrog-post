@@ -1,0 +1,27 @@
+{
+  "poetry": {
+    "name": "Poetry",
+    "tagline": "Short verse, mostly about weather and doubt.",
+    "hero_image": ""
+  },
+  "food": {
+    "name": "Food",
+    "tagline": "Reviews, recipes, and things worth queuing for.",
+    "hero_image": ""
+  },
+  "travel": {
+    "name": "Travel",
+    "tagline": "Notes from wherever the map pointed next.",
+    "hero_image": ""
+  },
+  "essays": {
+    "name": "Essays",
+    "tagline": "Longer thoughts I couldn't fit into a poem.",
+    "hero_image": ""
+  },
+  "books": {
+    "name": "Books",
+    "tagline": "What I'm reading, and what I think of it.",
+    "hero_image": ""
+  }
+}
