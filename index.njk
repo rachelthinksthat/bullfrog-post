@@ -31,32 +31,42 @@ description: A personal blog about poetry, food, travel, essays, and books.
       <a class="cat-tile" href="/poetry/">
         <div class="wash" style="background:var(--pink)"></div>
         <img class="illus" src="/assets/quill.png" alt="" width="46" height="50.1" aria-hidden="true">
-        <h3>Poetry</h3>
+        <h3>{{ categories.poetry.name }}</h3>
         <p>{{ categories.poetry.tagline }}</p>
       </a>
       <a class="cat-tile" href="/food/">
         <div class="wash" style="background:var(--orange)"></div>
         <img class="illus" src="/assets/teacup.png" alt="" width="46" height="37" aria-hidden="true">
-        <h3>Food</h3>
+        <h3>{{ categories.food.name }}</h3>
         <p>{{ categories.food.tagline }}</p>
       </a>
       <a class="cat-tile" href="/travel/">
         <div class="wash" style="background:var(--fresh2)"></div>
         <img class="illus" src="/assets/suitcase.png" alt="" width="46" height="39" aria-hidden="true">
-        <h3>Travel</h3>
+        <h3>{{ categories.travel.name }}</h3>
         <p>{{ categories.travel.tagline }}</p>
       </a>
       <a class="cat-tile" href="/essays/">
         <div class="wash" style="background:var(--olive)"></div>
         <img class="illus" src="/assets/notebook.png" alt="" width="46" height="60.6" aria-hidden="true">
-        <h3>Essays</h3>
+        <h3>{{ categories.essays.name }}</h3>
         <p>{{ categories.essays.tagline }}</p>
       </a>
       <a class="cat-tile" href="/books/">
         <div class="wash" style="background:var(--deep)"></div>
         <img class="illus" src="/assets/books.png" alt="" width="46" height="32.6" aria-hidden="true">
-        <h3>Books</h3>
+        <h3>{{ categories.books.name }}</h3>
         <p>{{ categories.books.tagline }}</p>
+      </a>
+      <a class="cat-tile" href="/film/">
+        <div class="wash" style="background:var(--fresh)"></div>
+        <svg class="illus" width="46" height="46" viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="2" y="3" width="20" height="14" rx="2" fill="var(--deep)"></rect>
+          <rect x="8" y="19" width="8" height="1.6" rx="0.8" fill="var(--deep)"></rect>
+          <path d="M10 7.5v5l4.3-2.5z" fill="var(--paper)"></path>
+        </svg>
+        <h3>{{ categories.film.name }}</h3>
+        <p>{{ categories.film.tagline }}</p>
       </a>
     </div>
   </div>
@@ -77,7 +87,7 @@ description: A personal blog about poetry, food, travel, essays, and books.
         </div>
         <div class="recent-body">
           <div>
-            <span class="tag"><span class="dot" style="background:{% if post.data.category == 'Poetry' %}var(--pink){% elif post.data.category == 'Food' %}var(--orange){% elif post.data.category == 'Travel' %}var(--fresh2){% elif post.data.category == 'Essays' %}var(--olive){% else %}var(--deep){% endif %}"></span>{{ post.data.category }}</span>
+            <span class="tag"><span class="dot" style="background:{% if post.data.category == 'Poetry' %}var(--pink){% elif post.data.category == 'Food' %}var(--orange){% elif post.data.category == 'Travel' %}var(--fresh2){% elif post.data.category == 'Essays' %}var(--olive){% elif post.data.category == 'Film' %}var(--fresh){% else %}var(--deep){% endif %}"></span>{{ categories[post.data.category | lower].name }}</span>
             <h3>{{ post.data.title }}</h3>
             <p>{{ post.data.excerpt }}</p>
           </div>
@@ -99,16 +109,27 @@ description: A personal blog about poetry, food, travel, essays, and books.
       "Food": { color: "var(--orange)", icon: "/assets/teacup.png", w: 34, h: 27.4 },
       "Travel": { color: "var(--fresh2)", icon: "/assets/suitcase.png", w: 34, h: 28.8 },
       "Essays": { color: "var(--olive)", icon: "/assets/notebook.png", w: 34, h: 44.8 },
-      "Books": { color: "var(--deep)", icon: "/assets/books.png", w: 34, h: 24.1 }
+      "Books": { color: "var(--deep)", icon: "/assets/books.png", w: 34, h: 24.1 },
+      "Film": { color: "var(--fresh)", icon: "", w: 34, h: 34 }
     } %}
 
-    {% for cat in ["Poetry", "Food", "Travel", "Essays", "Books"] %}
+    {% for cat in ["Poetry", "Food", "Travel", "Essays", "Books", "Film"] %}
     {% set meta = catMeta[cat] %}
     {% set catPosts = collections[cat | lower] %}
     <div class="archive-group" id="{{ cat | lower }}">
       <div class="archive-head">
-        <div class="archive-badge" style="background:{{ meta.color }}"><img class="illus" src="{{ meta.icon }}" alt="" width="{{ meta.w }}" height="{{ meta.h }}" aria-hidden="true"></div>
-        <h3>{{ cat }}</h3>
+        <div class="archive-badge" style="background:{{ meta.color }}">
+          {% if cat == "Film" %}
+          <svg width="34" height="34" viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="2" y="3" width="20" height="14" rx="2" fill="#fff"></rect>
+            <rect x="8" y="19" width="8" height="1.6" rx="0.8" fill="#fff"></rect>
+            <path d="M10 7.5v5l4.3-2.5z" fill="var(--fresh)"></path>
+          </svg>
+          {% else %}
+          <img class="illus" src="{{ meta.icon }}" alt="" width="{{ meta.w }}" height="{{ meta.h }}" aria-hidden="true">
+          {% endif %}
+        </div>
+        <h3>{{ categories[cat | lower].name }}</h3>
       </div>
       <div class="archive-posts">
         {% if catPosts.length %}
@@ -120,7 +141,7 @@ description: A personal blog about poetry, food, travel, essays, and books.
           </div>
           {% endfor %}
         {% else %}
-          <div class="archive-post"><h4>Nothing here yet</h4><p>Check back soon — the first {{ cat | lower }} post is on its way.</p></div>
+          <div class="archive-post"><h4>Nothing here yet</h4><p>Check back soon — the first {{ categories[cat | lower].name | lower }} post is on its way.</p></div>
         {% endif %}
       </div>
     </div>
