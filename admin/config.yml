@@ -66,8 +66,10 @@ collections:
           - { label: "Hero eyebrow (small text above the headline)", name: "hero_eyebrow", widget: "string" }
           - { label: "Hero headline", name: "hero_headline", widget: "string" }
           - { label: "Hero intro text", name: "hero_lede", widget: "text" }
+          - { label: "Hero image", name: "hero_image", widget: "image", required: false }
           - { label: "About heading", name: "about_heading", widget: "string" }
           - { label: "About bio", name: "about_bio", widget: "text" }
+          - { label: "About image", name: "about_image", widget: "image", required: false }
           - { label: "Based in", name: "about_based_in", widget: "string" }
           - { label: "Writing since", name: "about_writing_since", widget: "string" }
           - { label: "Currently reading", name: "about_currently_reading", widget: "string" }
