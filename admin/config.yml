@@ -55,3 +55,59 @@ collections:
       - { label: "Cover image", name: "image", widget: "image", required: false }
       - { label: "Excerpt", name: "excerpt", widget: "text", hint: "One or two sentences — shown on the homepage and category page." }
       - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "pages"
+    label: "Site Pages"
+    files:
+      - file: "_data/home.json"
+        label: "Homepage & About"
+        name: "home"
+        fields:
+          - { label: "Hero eyebrow (small text above the headline)", name: "hero_eyebrow", widget: "string" }
+          - { label: "Hero headline", name: "hero_headline", widget: "string" }
+          - { label: "Hero intro text", name: "hero_lede", widget: "text" }
+          - { label: "About heading", name: "about_heading", widget: "string" }
+          - { label: "About bio", name: "about_bio", widget: "text" }
+          - { label: "Based in", name: "about_based_in", widget: "string" }
+          - { label: "Writing since", name: "about_writing_since", widget: "string" }
+          - { label: "Currently reading", name: "about_currently_reading", widget: "string" }
+          - { label: "Contact email", name: "about_email", widget: "string" }
+      - file: "_data/categories.json"
+        label: "Category Pages"
+        name: "categories"
+        fields:
+          - label: "Poetry"
+            name: "poetry"
+            widget: "object"
+            fields:
+              - { label: "Display name", name: "name", widget: "string" }
+              - { label: "Tagline", name: "tagline", widget: "string" }
+              - { label: "Hero image", name: "hero_image", widget: "image", required: false }
+          - label: "Food"
+            name: "food"
+            widget: "object"
+            fields:
+              - { label: "Display name", name: "name", widget: "string" }
+              - { label: "Tagline", name: "tagline", widget: "string" }
+              - { label: "Hero image", name: "hero_image", widget: "image", required: false }
+          - label: "Travel"
+            name: "travel"
+            widget: "object"
+            fields:
+              - { label: "Display name", name: "name", widget: "string" }
+              - { label: "Tagline", name: "tagline", widget: "string" }
+              - { label: "Hero image", name: "hero_image", widget: "image", required: false }
+          - label: "Essays"
+            name: "essays"
+            widget: "object"
+            fields:
+              - { label: "Display name", name: "name", widget: "string" }
+              - { label: "Tagline", name: "tagline", widget: "string" }
+              - { label: "Hero image", name: "hero_image", widget: "image", required: false }
+          - label: "Books"
+            name: "books"
+            widget: "object"
+            fields:
+              - { label: "Display name", name: "name", widget: "string" }
+              - { label: "Tagline", name: "tagline", widget: "string" }
+              - { label: "Hero image", name: "hero_image", widget: "image", required: false }
