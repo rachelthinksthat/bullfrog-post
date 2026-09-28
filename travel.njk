@@ -1,15 +1,16 @@
 ---
 layout: base.njk
 title: Travel
-description: Notes from wherever the map pointed next.
 permalink: /travel/
 ---
 <section class="wrap category-hero">
-  <img src="/assets/travel-hero.png" alt="" onerror="this.style.display='none'">
+  {% if categories.travel.hero_image %}
+  <img src="{{ categories.travel.hero_image }}" alt="">
+  {% endif %}
   <div>
     <span class="eyebrow">Browse by kind</span>
-    <h1>Travel</h1>
-    <p>Notes from wherever the map pointed next.</p>
+    <h1>{{ categories.travel.name }}</h1>
+    <p>{{ categories.travel.tagline }}</p>
   </div>
 </section>
 
