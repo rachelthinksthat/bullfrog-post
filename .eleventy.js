@@ -1,4 +1,4 @@
-const CATEGORIES = ["Poetry", "Food", "Travel", "Essays", "Books"];
+const CATEGORIES = ["Poetry", "Food", "Travel", "Essays", "Books", "Film"];
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("assets");
