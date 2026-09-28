@@ -1,15 +1,16 @@
 ---
 layout: base.njk
 title: Books
-description: What I'm reading, and what I think of it.
 permalink: /books/
 ---
 <section class="wrap category-hero">
-  <img src="/assets/books-hero.png" alt="" onerror="this.style.display='none'">
+  {% if categories.books.hero_image %}
+  <img src="{{ categories.books.hero_image }}" alt="">
+  {% endif %}
   <div>
     <span class="eyebrow">Browse by kind</span>
-    <h1>Books</h1>
-    <p>What I'm reading, and what I think of it.</p>
+    <h1>{{ categories.books.name }}</h1>
+    <p>{{ categories.books.tagline }}</p>
   </div>
 </section>
 
