@@ -4,6 +4,10 @@ title: The Bullfrog Post
 description: A personal blog about poetry, food, travel, essays, and books.
 ---
 
+<div class="wrap" style="padding-block:4px 0">
+  <img src="/assets/lily-banner-cropped.png" alt="" style="width:100%;max-width:900px;height:auto;display:block;margin:0 auto" aria-hidden="true">
+</div>
+
 <section id="home" class="hero">
   <div class="wrap hero-inner">
     <div class="hero-copy">
@@ -19,15 +23,17 @@ description: A personal blog about poetry, food, travel, essays, and books.
   </div>
 </section>
 
-<div class="wrap" style="padding-block:4px 0">
-  <img src="/assets/lily-banner-cropped.png" alt="" style="width:100%;max-width:900px;height:auto;display:block;margin:0 auto" aria-hidden="true">
-</div>
-
 <section id="categories">
   <div class="wrap">
-    <span class="eyebrow">Browse by kind</span>
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
+      <span class="eyebrow">Browse by kind</span>
+      <div class="cat-arrows">
+        <button class="cat-arrow" id="cat-prev" type="button" aria-label="Previous categories">‹</button>
+        <button class="cat-arrow" id="cat-next" type="button" aria-label="Next categories">›</button>
+      </div>
+    </div>
     <div class="trail" aria-hidden="true"></div>
-    <div class="cat-grid">
+    <div class="cat-track" id="cat-track">
       <a class="cat-tile" href="/poetry/">
         <div class="wash" style="background:var(--pink)"></div>
         <img class="illus" src="/assets/quill.png" alt="" width="46" height="50.1" aria-hidden="true">
